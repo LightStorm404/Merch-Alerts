@@ -1,0 +1,315 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="merch_watcher_app.MainPage"
+    BackgroundColor="#111827">
+
+    <Grid RowDefinitions="Auto,*,Auto" Padding="20,30,20,20">
+
+        <!-- SEARCH BAR -->
+        <Frame
+            Grid.Row="0"
+            CornerRadius="30"
+            Padding="18,10"
+            BackgroundColor="#e5e7eb"
+            HasShadow="False">
+            <Grid ColumnDefinitions="*,Auto" VerticalOptions="Center">
+                <Entry
+                    x:Name="SearchEntry"
+                    Placeholder="search"
+                    BackgroundColor="Transparent"
+                    TextColor="#111827"
+                    FontSize="16"
+                    PlaceholderColor="#9ca3af" />
+
+                <!-- Material search icon -->
+                <Label
+                    Grid.Column="1"
+                    Text="&#xE8B6;"              
+                    FontFamily="MaterialSymbols"
+                    FontSize="22"
+                    TextColor="#111827"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center" />
+            </Grid>
+        </Frame>
+
+        <!-- SCROLLABLE AREA -->
+        <ScrollView Grid.Row="1" Margin="0,20,0,20">
+            <VerticalStackLayout Spacing="16">
+
+                <!-- MADISON BEER CARD -->
+                <Frame
+                    CornerRadius="18"
+                    Padding="14"
+                    BackgroundColor="#fb7185"
+                    HasShadow="True">
+                    <Grid RowDefinitions="Auto,Auto" ColumnDefinitions="*,Auto">
+
+                        <!-- Top row: name + settings -->
+                        <HorizontalStackLayout Grid.Row="0" Grid.Column="0" Spacing="8">
+                            <Label
+                                Text="Madison Beer"
+                                FontSize="18"
+                                FontAttributes="Bold"
+                                TextColor="White" />
+                        </HorizontalStackLayout>
+
+                        <!-- Settings icon (Material) -->
+                        <Label
+                            Grid.Row="0"
+                            Grid.Column="1"
+                            Text="&#xE8B8;"          
+                            FontFamily="MaterialSymbols"
+                            FontSize="20"
+                            TextColor="White"
+                            HorizontalOptions="End" />
+
+                            <!-- Bottom area -->
+                            <Grid Grid.Row="1" Grid.ColumnSpan="2"
+                              ColumnDefinitions="Auto,*,Auto"
+                              Margin="0,12,0,0">
+
+                                <!-- little text box -->
+                                <Frame
+                                Grid.Column="0"
+                                Padding="10,6"
+                                CornerRadius="10"
+                                BackgroundColor="#374151">
+                                    <Label
+                                    Text="some extra&#10;shit here idk"
+                                    FontSize="12"
+                                    TextColor="White" />
+                                </Frame>
+
+                                <!-- Regions + status/log -->
+                                <VerticalStackLayout
+                                Grid.Column="1"
+                                Spacing="4"
+                                HorizontalOptions="Center"
+                                VerticalOptions="Center">
+
+                                    <Label
+                                    Text="US | AUS | EU"
+                                    FontSize="12"
+                                    TextColor="White"
+                                    HorizontalTextAlignment="Center" />
+
+                                    <HorizontalStackLayout Spacing="6" HorizontalOptions="Center">
+                                        <CheckBox x:Name="MadisonUsCheck" Color="White" />
+                                        <CheckBox x:Name="MadisonAusCheck" Color="White" />
+                                        <CheckBox x:Name="MadisonEuCheck" Color="White" />
+                                    </HorizontalStackLayout>
+
+                                    <!-- Madison log / status (one line) -->
+                                    <Label
+                                    x:Name="MadisonLogLabel"
+                                    Text="no checks yet"
+                                    FontSize="11"
+                                    TextColor="#f9fafb"
+                                    HorizontalTextAlignment="Center"
+                                    LineBreakMode="TailTruncation"
+                                    MaxLines="1"
+                                    HeightRequest="16" />
+
+                                    <!-- Madison time (separate line) -->
+                                    <Label
+                                    x:Name="MadisonTimeLabel"
+                                    Text="--:--:--"
+                                    FontSize="10"
+                                    TextColor="#e5e7eb"
+                                    HorizontalTextAlignment="Center"
+                                    HeightRequest="14" />
+
+                                </VerticalStackLayout>
+
+                                <!-- Start / Stop buttons -->
+                                <HorizontalStackLayout
+                                Grid.Column="2"
+                                Spacing="6"
+                                VerticalOptions="End">
+                                    <Button
+                                    Text="start"
+                                    Clicked="OnMadisonStartClicked"
+                                    FontSize="12"
+                                    BackgroundColor="#22c55e"
+                                    TextColor="Black"
+                                    CornerRadius="9999"
+                                    Padding="10,4" />
+                                    <Button
+                                    Text="stop"
+                                    Clicked="OnMadisonStopClicked"
+                                    FontSize="12"
+                                    BackgroundColor="#ef4444"
+                                    TextColor="White"
+                                    CornerRadius="9999"
+                                    Padding="10,4" />
+                                </HorizontalStackLayout>
+                            </Grid>
+                    </Grid>
+                </Frame>
+
+                <!-- TRAVIS SCOTT CARD -->
+                <Frame
+                    CornerRadius="18"
+                    Padding="14"
+                    BackgroundColor="#b91c1c"
+                    HasShadow="True">
+                    <Grid RowDefinitions="Auto,Auto" ColumnDefinitions="*,Auto">
+
+                        <HorizontalStackLayout Grid.Row="0" Grid.Column="0" Spacing="8">
+                            <Label
+                                Text="Travis Scott"
+                                FontSize="18"
+                                FontAttributes="Bold"
+                                TextColor="White" />
+                        </HorizontalStackLayout>
+
+                        <!-- Settings icon (Material) -->
+                        <Label
+                            Grid.Row="0"
+                            Grid.Column="1"
+                            Text="&#xE8B8;"            
+                            FontFamily="MaterialSymbols"
+                            FontSize="20"
+                            TextColor="White"
+                            HorizontalOptions="End" />
+
+                            <Grid Grid.Row="1" Grid.ColumnSpan="2"
+                              ColumnDefinitions="Auto,*,Auto"
+                              Margin="0,12,0,0">
+
+                                <Frame
+                                Grid.Column="0"
+                                Padding="10,6"
+                                CornerRadius="10"
+                                BackgroundColor="#111827">
+                                    <Label
+                                    Text="pics maybe too"
+                                    FontSize="12"
+                                    TextColor="White" />
+                                </Frame>
+
+                                <VerticalStackLayout
+                                Grid.Column="1"
+                                Spacing="4"
+                                HorizontalOptions="Center"
+                                VerticalOptions="Center">
+
+                                    <Label
+                                    Text="US | AUS | EU"
+                                    FontSize="12"
+                                    TextColor="White"
+                                    HorizontalTextAlignment="Center" />
+
+                                    <HorizontalStackLayout Spacing="6" HorizontalOptions="Center">
+                                        <CheckBox x:Name="TravisUsCheck" Color="White" />
+                                        <CheckBox x:Name="TravisAusCheck" Color="White" />
+                                        <CheckBox x:Name="TravisEuCheck" Color="White" />
+                                    </HorizontalStackLayout>
+
+                                    <!-- Travis log / status -->
+                                    <Label
+                                    x:Name="TravisLogLabel"
+                                    Text="no checks yet"
+                                    FontSize="11"
+                                    TextColor="#f9fafb"
+                                    HorizontalTextAlignment="Center"
+                                    LineBreakMode="TailTruncation"
+                                    MaxLines="1"
+                                    HeightRequest="16" />
+
+                                    <!-- Travis time (separate line) -->
+                                    <Label
+                                    x:Name="TravisTimeLabel"
+                                    Text="--:--:--"
+                                    FontSize="10"
+                                    TextColor="#e5e7eb"
+                                    HorizontalTextAlignment="Center"
+                                    HeightRequest="14" />
+
+                                </VerticalStackLayout>
+
+                                <HorizontalStackLayout
+                                Grid.Column="2"
+                                Spacing="6"
+                                VerticalOptions="End">
+                                    <Button
+                                    Text="start"
+                                    Clicked="OnTravisStartClicked"
+                                    FontSize="12"
+                                    BackgroundColor="#22c55e"
+                                    TextColor="Black"
+                                    CornerRadius="9999"
+                                    Padding="10,4" />
+                                    <Button
+                                    Text="stop"
+                                    Clicked="OnTravisStopClicked"
+                                    FontSize="12"
+                                    BackgroundColor="#ef4444"
+                                    TextColor="White"
+                                    CornerRadius="9999"
+                                    Padding="10,4" />
+                                </HorizontalStackLayout>
+                            </Grid>
+                    </Grid>
+                </Frame>
+
+            </VerticalStackLayout>
+        </ScrollView>
+
+        <!-- BOTTOM NAV BAR -->
+        <Frame
+            Grid.Row="2"
+            Padding="16,10"
+            CornerRadius="22"
+            BackgroundColor="#020617"
+            HasShadow="True">
+            <Grid ColumnDefinitions="*,*,*,*">
+
+                <!-- home -->
+                <VerticalStackLayout HorizontalOptions="Center">
+                    <Label
+                        Text="&#xE88A;"           
+                        FontFamily="MaterialSymbols"
+                        FontSize="22"
+                        TextColor="White"
+                        HorizontalOptions="Center" />
+                </VerticalStackLayout>
+
+                <!-- search -->
+                <VerticalStackLayout Grid.Column="1" HorizontalOptions="Center">
+                    <Label
+                        Text="&#xE8B6;"           
+                        FontFamily="MaterialSymbols"
+                        FontSize="22"
+                        TextColor="White"
+                        HorizontalOptions="Center" />
+                </VerticalStackLayout>
+
+                <!-- favorites -->
+                <VerticalStackLayout Grid.Column="2" HorizontalOptions="Center">
+                    <Label
+                        Text="&#xE838;"           
+                        FontFamily="MaterialSymbols"
+                        FontSize="22"
+                        TextColor="White"
+                        HorizontalOptions="Center" />
+                </VerticalStackLayout>
+
+                <!-- profile -->
+                <VerticalStackLayout Grid.Column="3" HorizontalOptions="Center">
+                    <Label
+                        Text="&#xE7FD;"        
+                        FontFamily="MaterialSymbols"
+                        FontSize="22"
+                        TextColor="White"
+                        HorizontalOptions="Center" />
+                </VerticalStackLayout>
+
+            </Grid>
+        </Frame>
+
+    </Grid>
+</ContentPage>
