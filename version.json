@@ -1,4 +1,5 @@
 {
   "version": "1.0.0",
-  "url": "https://github.com/LightStorm404/Merch-Alerts/releases"
+  "url": "https://github.com/LightStorm404/Merch-Alerts/releases/tag/android"
+    "changelog": "• Fixed status detection - Added more items - Added updating check feature"
 }
